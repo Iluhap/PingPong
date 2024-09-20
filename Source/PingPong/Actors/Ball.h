@@ -29,6 +29,9 @@ public:
 	           AActor* OtherActor, UPrimitiveComponent* OtherComp,
 	           FVector NormalImpulse, const FHitResult& Hit);
 
+	UFUNCTION()
+	void AddRandomImpulse();
+	
 private:
 	FVector GetHitResultVelocity(const FHitResult& Hit);
 	
@@ -40,7 +43,7 @@ private:
 	FName ObstacleTag;
 
 	UPROPERTY(EditDefaultsOnly, Category="Physics", meta=(AllowPrivateAccess = "true"))
-	float HitImpulseScale = 100;
+	float HitImpulseScale = 1000;
 
 	UPROPERTY()
 	FVector CurrentVelocity;

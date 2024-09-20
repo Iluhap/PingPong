@@ -46,6 +46,14 @@ void ABall::OnHit(UPrimitiveComponent* HitComponent,
 	}
 }
 
+void ABall::AddRandomImpulse()
+{
+	FVector Direction = FMath::VRand() * HitImpulseScale;
+	Direction.Z = 0;
+
+	Mesh->SetPhysicsLinearVelocity(Direction);
+}
+
 FVector ABall::GetHitResultVelocity(const FHitResult& Hit)
 {
 	FVector Velocity;
