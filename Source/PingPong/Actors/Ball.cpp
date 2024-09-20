@@ -29,11 +29,6 @@ void ABall::Tick(float DeltaTime)
 	CurrentVelocity = Mesh->GetComponentVelocity();
 
 	const FVector BodyCenter = Mesh->GetCenterOfMass();
-	DrawDebugDirectionalArrow(GetWorld(),
-	                          BodyCenter, BodyCenter + CurrentVelocity.GetSafeNormal() * 200,
-	                          10, FColor::Yellow, false, 0.1);
-
-
 }
 
 void ABall::OnHit(UPrimitiveComponent* HitComponent,

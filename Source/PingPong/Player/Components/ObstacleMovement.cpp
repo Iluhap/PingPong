@@ -21,9 +21,10 @@ void UObstacleMovement::BeginPlay()
 {
 	Super::BeginPlay();
 
-	auto* Character = Cast<ACharacter>(GetOwner());
-
-	Character->GetCharacterMovement()->MaxWalkSpeed = Speed;
+	if (const auto* Character = Cast<ACharacter>(GetOwner()); IsValid(Character))
+	{
+		Character->GetCharacterMovement()->MaxWalkSpeed = Speed;
+	}
 	
 	if (const auto* Obstacle = GetObstacle(); IsValid(Obstacle))
 	{
@@ -42,31 +43,16 @@ void UObstacleMovement::Move(const FInputActionValue& Value)
 {
 	const float InputValue = Value.Get<float>();
 
-	const float LeftBound = StartLocation.Y - EdgeDistance;
-	const float RightBound = StartLocation.Y + EdgeDistance;
-
-	if (auto* Pawn = Cast<APawn>(GetOwner()); IsValid(Pawn))
+	if (auto* Character = Cast<ACharacter>(GetOwner()); IsValid(Character))
 	{
-		const FRotator PlayerRotation = Pawn->GetControlRotation();
+		const FRotator PlayerRotation = Character->GetControlRotation();
 		const FVector RightDirection = FRotationMatrix(PlayerRotation).GetScaledAxis(EAxis::Y);
 
-		Pawn->AddMovementInput(RightDirection, InputValue);
-	}
-	
-	if (auto* Obstacle = GetObstacle(); IsValid(Obstacle))
-	{
-		const FVector CurrentLocation = Obstacle->GetRelativeLocation();
-		const FVector NewLocation = {
-			CurrentLocation.X,
-			FMath::Clamp(CurrentLocation.Y + InputValue, LeftBound, RightBound),
-			CurrentLocation.Z
-		};
-		
-		// Obstacle->SetRelativeLocation(NewLocation, true);
+		Character->AddMovementInput(RightDirection, InputValue * Speed);
 	}
 }
 
-UStaticMeshComponent* UObstacleMovement::GetObstacle()
+UStaticMeshComponent* UObstacleMovement::GetObstacle() const
 {
 	if (const auto* Owner = GetOwner(); Owner)
 	{

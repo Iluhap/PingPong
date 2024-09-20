@@ -31,14 +31,11 @@ public:
 	void Move(const struct FInputActionValue& Value);
 
 private:
-	UStaticMeshComponent* GetObstacle();
+	UStaticMeshComponent* GetObstacle() const;
 
 private:
 	UPROPERTY(EditAnywhere, Category="Params", meta=(AllowPrivateAccess = "true"))
 	float Speed = 100;
-
-	UPROPERTY(EditAnywhere, Category="Params", meta=(AllowPrivateAccess = "true"))
-	float EdgeDistance = 1000;
 
 	UPROPERTY()
 	FVector StartLocation;
