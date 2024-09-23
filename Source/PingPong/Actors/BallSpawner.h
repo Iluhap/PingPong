@@ -14,7 +14,6 @@ class PINGPONG_API ABallSpawner : public AActor
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this actor's properties
 	ABallSpawner();
 
 public:

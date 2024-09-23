@@ -6,9 +6,6 @@
 #include "GameFramework/PlayerState.h"
 #include "BasePlayerState.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class PINGPONG_API ABasePlayerState : public APlayerState
 {

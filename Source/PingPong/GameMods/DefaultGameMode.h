@@ -52,6 +52,9 @@ private:
 	int32 PlayerCount = 0;
 
 	UPROPERTY(EditDefaultsOnly, Category="Configuration", meta=(AllowPrivateAccess="true"))
+	int32 PlayersCountToStart = 2;
+
+	UPROPERTY(EditDefaultsOnly, Category="Configuration", meta=(AllowPrivateAccess="true"))
 	int32 ScoreLimit = 5;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Configuration", meta=(AllowPrivateAccess="true"))

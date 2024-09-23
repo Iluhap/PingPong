@@ -10,17 +10,14 @@
 #include "PingPong/Player/BasePlayerState.h"
 
 
-// Sets default values
 AGoalTrigger::AGoalTrigger()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	bReplicates = true;
 
 	PlayerID = 0;
 }
 
-// Called when the game starts or when spawned
 void AGoalTrigger::BeginPlay()
 {
 	Super::BeginPlay();
@@ -31,12 +28,6 @@ void AGoalTrigger::BeginPlay()
 	{
 		GameMode->OnGameStarted.AddUniqueDynamic(this, &AGoalTrigger::OnGameStarted);
 	}
-}
-
-// Called every frame
-void AGoalTrigger::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
 }
 
 void AGoalTrigger::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent,

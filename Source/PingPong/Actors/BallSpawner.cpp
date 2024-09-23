@@ -6,7 +6,6 @@
 #include "Ball.h"
 
 
-// Sets default values
 ABallSpawner::ABallSpawner()
 {
 	BallClass = nullptr;

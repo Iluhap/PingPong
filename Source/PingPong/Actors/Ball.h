@@ -12,18 +12,14 @@ class PINGPONG_API ABall : public AActor
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this actor's properties
 	ABall();
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-public:
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComponent,
 	           AActor* OtherActor, UPrimitiveComponent* OtherComp,
@@ -31,7 +27,7 @@ public:
 
 	UFUNCTION()
 	void AddRandomImpulse();
-	
+
 private:
 	FVector GetHitResultVelocity(const FHitResult& Hit);
 	

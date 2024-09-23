@@ -6,9 +6,7 @@
 #include "GameFramework/PlayerController.h"
 #include "BasePlayerController.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class PINGPONG_API ABasePlayerController : public APlayerController
 {
