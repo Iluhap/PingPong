@@ -7,6 +7,18 @@ public class PingPong : ModuleRules
 	public PingPong(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
+        PublicIncludePaths.AddRange(
+            new string[] {
+                "PingPong/Public"
+            }
+        );
+
+        PrivateIncludePaths.AddRange(
+            new string[] {
+                "PingPong/Private"
+            }
+        );
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
 

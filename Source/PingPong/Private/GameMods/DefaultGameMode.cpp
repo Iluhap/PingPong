@@ -1,13 +1,13 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "DefaultGameMode.h"
+#include "GameMods/DefaultGameMode.h"
 
 #include "EngineUtils.h"
 #include "Kismet/KismetSystemLibrary.h"
-#include "PingPong/Actors/BallSpawner.h"
-#include "PingPong/Actors/GoalTrigger.h"
-#include "PingPong/Player/BasePlayerState.h"
+#include "Actors/BallSpawner.h"
+#include "Actors/GoalTrigger.h"
+#include "Player/BasePlayerState.h"
 
 class ABasePlayerState;
 
@@ -41,7 +41,7 @@ void ADefaultGameMode::PostLogin(APlayerController* NewPlayer)
 
 	PlayerCount++;
 
-	if (PlayerCount == 2)
+	if (PlayerCount == PlayersCountToStart)
 	{
 		OnGameStarted.Broadcast();
 		StartRound();
@@ -55,7 +55,7 @@ void ADefaultGameMode::Logout(AController* Exiting)
 	PlayerCount--;
 	UE_LOG(LogTemp, Warning, TEXT("Player left. Current player count: %d"), PlayerCount);
 
-	if (PlayerCount < 2)
+	if (PlayerCount < PlayersCountToStart)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Game stopped due to player disconnection."));
 		StopRound();
@@ -107,7 +107,7 @@ void ADefaultGameMode::EndGame(const APlayerController* WinningPlayer)
 		!TimerManager.IsTimerActive(QuitGameTimerHandle))
 	{
 		TimerManager.SetTimer(QuitGameTimerHandle,
-		                                       this, &ADefaultGameMode::QuitGame, QuitGameDelay);
+		                      this, &ADefaultGameMode::QuitGame, QuitGameDelay);
 	}
 }
 

@@ -1,12 +1,11 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BallSpawner.h"
+#include "Actors/BallSpawner.h"
 
-#include "Ball.h"
+#include "Actors/Ball.h"
 
 
-// Sets default values
 ABallSpawner::ABallSpawner()
 {
 	BallClass = nullptr;
