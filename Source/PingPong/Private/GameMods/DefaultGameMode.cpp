@@ -1,13 +1,13 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "DefaultGameMode.h"
+#include "GameMods/DefaultGameMode.h"
 
 #include "EngineUtils.h"
 #include "Kismet/KismetSystemLibrary.h"
-#include "PingPong/Actors/BallSpawner.h"
-#include "PingPong/Actors/GoalTrigger.h"
-#include "PingPong/Player/BasePlayerState.h"
+#include "Actors/BallSpawner.h"
+#include "Actors/GoalTrigger.h"
+#include "Player/BasePlayerState.h"
 
 class ABasePlayerState;
 

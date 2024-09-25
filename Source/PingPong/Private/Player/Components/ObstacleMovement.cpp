@@ -1,7 +1,7 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "ObstacleMovement.h"
+#include "Player/Components/ObstacleMovement.h"
 
 #include "InputActionValue.h"
 #include "GameFramework/Character.h"

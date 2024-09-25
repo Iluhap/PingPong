@@ -1,13 +1,13 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GoalTrigger.h"
+#include "Actors/GoalTrigger.h"
 
-#include "Ball.h"
+#include "Actors/Ball.h"
 #include "Components/ShapeComponent.h"
 #include "GameFramework/GameStateBase.h"
-#include "PingPong/GameMods/DefaultGameMode.h"
-#include "PingPong/Player/BasePlayerState.h"
+#include "GameMods/DefaultGameMode.h"
+#include "Player/BasePlayerState.h"
 
 
 AGoalTrigger::AGoalTrigger()

@@ -1,11 +1,11 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BasePlayerController.h"
+#include "Player/BasePlayerController.h"
 
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
-#include "Components/ObstacleMovement.h"
+#include "PLayer/Components/ObstacleMovement.h"
 #include "GameFramework/Character.h"
 
 

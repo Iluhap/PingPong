@@ -1,10 +1,10 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BasePlayer.h"
+#include "Player/BasePlayer.h"
 
 #include "Camera/CameraComponent.h"
-#include "Components/ObstacleMovement.h"
+#include "Player/Components/ObstacleMovement.h"
 #include "GameFramework/SpringArmComponent.h"
 
 
